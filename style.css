@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5D3737;
+    color: white;
+    transition: background-color 0.5s ease;
+    overflow: hidden; 
+}
+
+.container {
+    height: 600px;
+    width: 1000px;
+    border-radius: 25px;
+    border: 0.8px solid black;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin: 40px auto;
+    background: url('./img/foto1.jpg') center/cover;
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.3s ease, background 0.5s ease;
+}
+
+.blur {
+    filter: blur(10px);
+}
+
+.container * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button {
+    cursor: pointer;
+    font-size: 40px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    transform: scale(1.1);
+}
+
+#btn1 {
+    left: 20px;
+}
+
+#btn2 {
+    right: 20px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" id="slider">
+        <button onclick="show(1)" id="btn2">&rarr;</button>
+        <button onclick="show(-1)" id="btn1">&larr;</button>
+    </div>
+
+    <script>
+        let say = 1;
+        const slider = document.getElementById("slider");
+        const colors = [
+            "#5D3737", "#1a1a2e", "#143F49", "#393C3A", "#616F71",
+            "#AAC357", "#AE844F", "#C4C8D1", "#211311", "#524C49"
+        ];
+        function show(x) {
+            say += x;
+            if (say === 0) say = 10;
+            if (say === 11) say = 1;
+
+            slider.classList.add("blur");
+
+            setTimeout(() => {
+                slider.style.background = `url('img/foto${say}.jpg') center/cover`;
+                slider.classList.remove("blur");
+            }, 300);
+
+            document.body.style.backgroundColor = colors[say - 1];
+        }
+    </script>
+</body>
+
+</html>
